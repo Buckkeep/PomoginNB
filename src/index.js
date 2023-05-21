@@ -1,13 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Home from './pages/Home/Home.js';
+import Timer from './pages/Timer/Timer.js';
+import Both from './pages/Both/Both.js';
+import Todo from './pages/Todo/Todo.js';
+import Test from './exercise/exercise';
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/timer',
+    element: <Timer />,
+  },
+  {
+    path: '/todo',
+    element: <Todo />,
+  },
+  {
+    path: '/both',
+    element: <Both />,
+  },
+  {
+    path: '/excercise',
+    element: <Test />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
